@@ -1,6 +1,6 @@
 # Bitly Clone
 
-<h1>Under Development</h1>
+<h2>Under Development</h2>
 
 # Current Features:
 --QR Code generation
