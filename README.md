@@ -17,6 +17,7 @@ Pass: secret
  
 # Links:
 [Simplesoftwareio.](http://www.simplesoftware.io/#/docs/simple-qrcode) <br>
+[picqer.](https://github.com/picqer/php-barcode-generator) <br>
 [Laravel Template.](http://www.github.com/nasirkhan/laravel-starter)
 
 <h2>Imagick extension for PHP is must for PNG format. You can change the change for SVG and it doesn't require any extensions</h2><br>
