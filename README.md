@@ -1,19 +1,21 @@
 # Bitly Clone (Under Development)
 
 # Current Features:
---QR Code generation<br>
---Barcode Generation
+--QR Code Generation<br>
+--Barcode Generation<br>
+--URL Shortener
 
 # Working:
 --Makes use of a laravel template to authenticate the user before they are able to use the features.<br>
 
-You may use the following account credentials to access the application backend.
+You may use the following account credentials to access the application backend. There is no sign up feature yet. You can manually add users into the database.
 ```
 User: user@user.com
 Pass: secret
 ```
 --It also provides the option of downloading as PNG files in the user's default Download directory.<br>
 --In storage/app/qrcodes or /barcodes the codes are automatically stored (as PNG) after being generated.
+--Original URLs and their shortened versions are stored in the database with the table named as "url_mappings".
  
 # Links:
 [Simplesoftwareio.](http://www.simplesoftware.io/#/docs/simple-qrcode) <br>
