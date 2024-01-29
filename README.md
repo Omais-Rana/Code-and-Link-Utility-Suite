@@ -1,6 +1,6 @@
 # Bitly Clone (Under Development)
 
-# Current Features:
+# Features:
 --QR Code Generation<br>
 --Barcode Generation<br>
 --URL Shortener
