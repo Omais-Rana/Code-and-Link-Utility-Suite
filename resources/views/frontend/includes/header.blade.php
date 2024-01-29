@@ -49,17 +49,7 @@
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <div class="ml-3 relative" x-data="{ isUserMenuOpen: false, isLocalMenuOpen: false }">
                     <div class="flex flex-row">
-                        <button @click="isLocalMenuOpen = !isLocalMenuOpen" @keydown.escape="isLocalMenuOpen = false"
-                            type="button"
-                            class="flex flex-col sm:flex-row text-center rounded px-2 mr-2 sm:align-middle sm:items-center focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-offset-gray-500 focus:ring-white transition ease-out duration-300"
-                            id="local-menu-button" aria-expanded="false" aria-haspopup="true">
-                            <span class="sr-only">{{ __('Open local menu') }}</span>
-                            <span><i class="fa-solid fa-language"></i></span>
-                            <span>
-                                <span class="hidden sm:inline">&nbsp;</span>
-                                {{ strtoupper(App::getLocale()) }}
-                            </span>
-                        </button>
+
                         @guest
                             <a href="{{ route('login') }}"
                                 class="flex items-center mx-2 px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-orange-600 rounded-md hover:bg-orange-500 focus:outline-none focus:bg-orange-500 invisible md:visible">
@@ -70,17 +60,16 @@
                                 </svg>
                                 <span class="mx-1">{{ __('Login') }}</span>
                             </a>
-                            @if (user_registration())
-                                <a href="{{ route('register') }}"
-                                    class="flex items-center mx-2 px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-orange-600 rounded-md hover:bg-orange-500 focus:outline-none focus:bg-orange-500 invisible md:visible">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                    </svg>
-                                    <span class="mx-1">{{ __('Register') }}</span>
-                                </a>
-                            @endif
+
+                            <a href="{{ route('register') }}"
+                                class="flex items-center mx-2 px-4 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-orange-600 rounded-md hover:bg-orange-500 focus:outline-none focus:bg-orange-500 invisible md:visible authen">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                <span class="mx-1">{{ __('Register') }}</span>
+                            </a>
                         @else
                             <button @click="isUserMenuOpen = !isUserMenuOpen" @keydown.escape="isUserMenuOpen = false"
                                 type="button"
@@ -100,8 +89,7 @@
                             x-transition:leave="transition ease-in duration-75 transform"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
                             class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-2 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
-                            tabindex="-1">
+                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
 
                             @can('view_backend')
                                 <a href='{{ route('backend.dashboard') }}'

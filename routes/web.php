@@ -23,7 +23,6 @@ Route::get('/check-auth', 'YourController@checkAuth')->middleware('auth');
 Route::post('/shorten-url', [URLShortenerController::class, 'shorten'])->name('url.shorten');
 Route::get('/bit.ly/{shortenedURL}', [URLShortenerController::class, 'redirect']);
 
-
 //Homepage options
 Route::get('/form/{form}', [FormController::class, 'showForm'])->name('showForm');
 
