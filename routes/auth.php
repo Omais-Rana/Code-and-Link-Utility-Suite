@@ -12,13 +12,13 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
 // Check if registration is enabled
+if (user_registration()) {
+    Route::middleware('guest')->group(function () {
+        Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
 
-Route::middleware('guest')->group(function () {
-    Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
-
-    Route::post('register', [RegisteredUserController::class, 'store']);
-});
-
+        Route::post('register', [RegisteredUserController::class, 'store']);
+    });
+}
 
 Route::middleware('guest')->group(function () {
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
