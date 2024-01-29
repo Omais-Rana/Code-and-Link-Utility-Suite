@@ -8,7 +8,7 @@
 # Working:
 --Makes use of a laravel template to authenticate the user before they are able to use the features.<br>
 
-You may use the following account credentials to access the application backend. There is no sign up option yet. You can manually add users into the database.
+You may use the following account credentials to login or register a new account.
 ```
 User: user@user.com
 Pass: secret
