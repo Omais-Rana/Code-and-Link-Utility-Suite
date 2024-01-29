@@ -36,7 +36,6 @@
 
         <div class="flex justify-center">
             <div class="container mt-5">
-                <p class="text-center">Select an option.</p>
                 <table class="table table-bordered mx-auto" style="width: 50%;">
                     <thead>
                         <tr class="text-center">

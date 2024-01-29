@@ -1,4 +1,4 @@
-<nav class="bg-white drop-shadow-md" x-data="{ showMobileNav: false }">
+<nav class="bg-gray-100" x-data="{ showMobileNav: false }">
     <div class="max-w-7xl mx-auto px-2 py-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -29,26 +29,22 @@
                             alt="{{ app_name() }}">
                     </a>
                 </div>
-                {{-- <div class="hidden sm:block sm:ml-6">
+                <div class="hidden sm:block sm:ml-6">
                     <div class="flex space-x-4">
-                        <a href="{{ route('frontend.posts.index') }}"
+                        <a href="#"
                             class="text-gray-600 border-transparent border-b-2 hover:border-orange-600 px-3 py-2 text-base font-medium transition ease-out duration-300">
-                            {{ __('Posts') }}
+                            {{ __('Products') }}
                         </a>
-                        <a href="{{ route('frontend.categories.index') }}"
+                        <a href="#"
                             class="text-gray-600 border-transparent border-b-2 hover:border-orange-600 px-3 py-2 text-base font-medium transition ease-out duration-300">
-                            {{ __('Categories') }}
+                            {{ __('Pricing') }}
                         </a>
-                        <a href="{{ route('frontend.tags.index') }}"
+                        <a href="#"
                             class="text-gray-600 border-transparent border-b-2 hover:border-orange-600 px-3 py-2 text-base font-medium transition ease-out duration-300">
-                            {{ __('Tags') }}
-                        </a>
-                        <a href="{{ route('frontend.comments.index') }}"
-                            class="text-gray-600 border-transparent border-b-2 hover:border-orange-600 px-3 py-2 text-base font-medium transition ease-out duration-300">
-                            {{ __('Comments') }}
+                            {{ __('Resources') }}
                         </a>
                     </div>
-                </div> --}}
+                </div>
             </div>
             <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <div class="ml-3 relative" x-data="{ isUserMenuOpen: false, isLocalMenuOpen: false }">
@@ -104,7 +100,8 @@
                             x-transition:leave="transition ease-in duration-75 transform"
                             x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
                             class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-2 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
-                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                            role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
+                            tabindex="-1">
 
                             @can('view_backend')
                                 <a href='{{ route('backend.dashboard') }}'
