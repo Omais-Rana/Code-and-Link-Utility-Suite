@@ -15,30 +15,19 @@
         .form-link:hover {
             color: #3498db;
         }
-
-        h1 {
-            color: #252628;
-            font-family: "ProximaNova ExtraBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 62px;
-            font-weight: 800;
-            line-height: 56px;
-        }
-
-        h2 {
-            color: #56575b;
-            font-family: "ProximaNova Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 24px;
-            font-weight: 400;
-        }
     </style>
     <section class="bg-gray-100 mb-20">
-        <div class="container items-center">
+        <div class="container mx-auto flex px-1 sm:px-20 py-20 md:flex-row flex-col items-center">
 
-            <div class=" items-center text-center">
-                <h1 style="text-align: center;">Make every <span style="color: #2a5bd7;">connection</span> count</h1>
-                <h2 style="text-align: center;">Create short links, QR Codes, and Link-in-bio pages. Share them anywhere.<br
-                        class="show-for-large">Track what’s working, and what’s not. All inside the <strong>Bitly Connections
-                        Platform</strong>.</h2>
+            <div
+                class="lg:flex-grow md:w-1/2 px-4 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+                <h1 class="title-font sm:text-5xl text-5xl mb-4 font-medium text-gray-800">
+                    Make every connection count
+                </h1>
+                <p class="mb-8 sm:text-3xl text-2xl">
+                    Create short links, QR Codes, and Link-in-bio pages. Share them anywhere.
+                    Track what’s working, and what’s not. All inside the Bitly Connections Platform.
+                </p>
 
                 @include('frontend.includes.messages')
 

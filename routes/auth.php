@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 // Check if registration is enabled
 if (user_registration()) {
     Route::middleware('guest')->group(function () {
-        Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
+        Route::get('register', [RegisteredUserController::class, 'create'])
+            ->name('register');
 
         Route::post('register', [RegisteredUserController::class, 'store']);
     });
@@ -58,6 +59,9 @@ Route::middleware('auth')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
+
+    //Checking authentication status
+    Route::get('/check-auth', [AuthenticatedSessionController::class, 'checkAuth'])->name('checkAuth');
 });
 
 // Social Login Routes
