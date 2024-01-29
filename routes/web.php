@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\QRCodeController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\BarcodeController;
+use App\Http\Controllers\URLShortenerController;
 
 //Barcode Routes
 Route::get('/barcode', [BarcodeController::class, 'index'])->name('barcode.index');
@@ -17,6 +18,11 @@ Route::get('/showForm/{form}', 'QRCodeController@index')->name('showForm');
 Route::post('/generate', [QRCodeController::class, 'generate'])->name('qrcode.generate');
 Route::get('/download/qrcodes/{filename}', [QRCodeController::class, 'downloadFile'])->name('qrcode.download.file');
 Route::get('/check-auth', 'YourController@checkAuth')->middleware('auth');
+
+// Link Shortener Routes
+Route::post('/shorten-url', [URLShortenerController::class, 'shorten'])->name('url.shorten');
+Route::get('/bit.ly/{shortenedURL}', [URLShortenerController::class, 'redirect']);
+
 
 //Homepage options
 Route::get('/form/{form}', [FormController::class, 'showForm'])->name('showForm');

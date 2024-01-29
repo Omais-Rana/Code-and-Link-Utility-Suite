@@ -50,7 +50,7 @@
                             </th>
                             <th class="align-middle">
                                 <a href="#" class="form-link"
-                                    data-form-url="{{ route('showForm', ['form' => 'option3']) }}">Option 3</a>
+                                    data-form-url="{{ route('showForm', ['form' => 'shortened_url']) }}">Short Link</a>
                             </th>
                         </tr>
                     </thead>
@@ -92,9 +92,11 @@
                             url: form.attr('action'),
                             data: form.serialize(),
                             success: function(data) {
-                                $('#qrcode-container, #barcode-container').html(data);
-                                form.find('input[name="url"], input[name="barcode_text"]').val(
-                                    '');
+                                $('#qrcode-container, #barcode-container, #shortened-url-container')
+                                    .html(data);
+                                form.find(
+                                    'input[name="url"], input[name="barcode_text"]'
+                                ).val('');
                             },
                             error: function(xhr, status, error) {
                                 handleAjaxError(xhr);
@@ -105,6 +107,7 @@
                         window.location.href = '/login';
                     }
                 });
+
 
                 $(document).on('click', '.download-link', function(e) {
                     e.preventDefault();
