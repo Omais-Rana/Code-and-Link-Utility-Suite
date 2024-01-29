@@ -1,12 +1,23 @@
-# QR Code Generator
+# Bitly Clone (Under Development)
 
-<h1>Simplesoftwareio v1 has been used for QR generation along with a laravel template. Links are given below.
-<h2>Imagick extension for PHP is must for PNG format. You can change the change for SVG and it doesn't require any extensions</h2>
+# Current Features:
+--QR Code generation<br>
+--Barcode Generation
 
---The folder "With User Auth" makes use of the laravel template to authenticate the user before they are able to generate a QR or Barcode.<br>
+# Working:
+--Makes use of a laravel template to authenticate the user before they are able to use the features.<br>
+
+You may use the following account credentials to access the application backend.
+```
+User: user@user.com
+Pass: secret
+```
 --It also provides the option of downloading as PNG files in the user's default Download directory.<br>
---In storage/app/qrcodes or /barcodes the codes are automatically stored (as PNG) after being generated
+--In storage/app/qrcodes or /barcodes the codes are automatically stored (as PNG) after being generated.
  
-
-[Simplesoftwareio.](http://www.simplesoftware.io/#/docs/simple-qrcode)
+# Links:
+[Simplesoftwareio.](http://www.simplesoftware.io/#/docs/simple-qrcode) <br>
+[picqer.](https://github.com/picqer/php-barcode-generator) <br>
 [Laravel Template.](http://www.github.com/nasirkhan/laravel-starter)
+
+<h2>Imagick extension for PHP is must for PNG format. You can change the change for SVG and it doesn't require any extensions</h2><br>
