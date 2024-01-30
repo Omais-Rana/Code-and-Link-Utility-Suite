@@ -8,7 +8,7 @@
 # Working:
 <h2>For usage with user authentication</h2>
 --Makes use of a laravel template to authenticate the user before they are able to use the features.<br>
---You may use the following account credentials to login. The sign up option is not accessible but the module has been built.
+--You may use the following account credentials to login. The sign up option is not accessible but the module has been built.<br>
 ```
 User: user@user.com
 Pass: secret
