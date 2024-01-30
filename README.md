@@ -6,9 +6,9 @@
 * URL Shortener
 
 # Working:
-<h2>For usage with user authentication:</h2>
-* Makes use of a laravel template to authenticate the user before they are able to use the features.<br>
-* You may use the following account credentials to login. The sign up option is not accessible but the module has been built.<br>
+<h2>For usage with user authentication</h2>
+- Makes use of a laravel template to authenticate the user before they are able to use the features.<br>
+- You may use the following account credentials to login. The sign up option is not accessible but the module has been built.<br>
 
 ```
 User: user@user.com
@@ -16,9 +16,9 @@ Pass: secret
 ```
 
 <h2>General uses</h2>
-* Provides the option of downloading codes as PNG files in the user's default Download directory.<br>
-* In storage/app/qrcodes or /barcodes the codes are automatically stored (as PNG) after being generated.<br>
-* Original URLs and their shortened versions are stored in the database with the table named as "url_mappings".
+- Provides the option of downloading codes as PNG files in the user's default Download directory.<br>
+- In storage/app/qrcodes or /barcodes the codes are automatically stored (as PNG) after being generated.<br>
+- Original URLs and their shortened versions are stored in the database with the table named as "url_mappings".
 
 # Installation
 
