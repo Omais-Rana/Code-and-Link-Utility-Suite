@@ -33,15 +33,11 @@
     </style>
     <section class="bg-gray-100 mb-20">
         <div class="container items-center">
-
             <div class=" items-center text-center">
-                <h1 style="text-align: center;">Make every <span style="color: #2a5bd7;">connection</span> count</h1>
-                <h2 style="text-align: center;">Create short links, QR Codes, and Link-in-bio pages. Share them anywhere.<br
-                        class="show-for-large">Track what’s working, and what’s not. All inside the <strong>Bitly Connections
-                        Platform</strong>.</h2>
-
-                @include('frontend.includes.messages')
-
+                <h1 style="text-align: center;">Multi-Purpose Code and Link Management Platform</h1>
+                <h2 style="text-align: center;">Create QR Codes, Barcodes and Short Links. Download and share them
+                    anywhere.
+                </h2>
             </div>
         </div>
 
