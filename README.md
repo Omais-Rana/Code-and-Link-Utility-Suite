@@ -29,7 +29,7 @@ Follow the steps mentioned below to install and run the project. You may find mo
 5. Run the command to generate application key `php artisan key:generate`
 6. Run the command `php artisan migrate --seed`
 7. Link storage directory: `php artisan storage:link`
-8. Run this command to create a table `php artisan make:migration create_url_mappings_table`
+8. Run this command to create a table `php artisan make:migration create_url_mappings_table` and migrate using `php artisan migrate`
 9. You may create a virtualhost entry to access the application or run `php artisan serve` from the project root and visit `http://127.0.0.1:8000`
     
 # Links:
