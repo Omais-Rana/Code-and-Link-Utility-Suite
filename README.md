@@ -1,9 +1,9 @@
 # Multi-Purpose Code and Link Management Platform
 
 # Features:
---QR Code Generation<br>
---Barcode Generation<br>
---URL Shortener
+* QR Code Generation<br>
+*Barcode Generation<br>
+*URL Shortener
 
 # Working:
 <h2>For usage with user authentication</h2>
