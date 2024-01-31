@@ -16,7 +16,7 @@ class URLShortenerController extends Controller
             'url' => 'required|url',
         ]);
 
-        $shortenedURL = 'sori.ic/' . Str::random(6);
+        $shortenedURL = 'sho.rt/' . Str::random(6);
 
         UrlMapping::create([
             'shortened_url' => $shortenedURL,
@@ -28,7 +28,7 @@ class URLShortenerController extends Controller
 
     public function redirect($shortened)
     {
-        $url = UrlMapping::where('shortened_url', 'sori.ic/' . $shortened)->first();
+        $url = UrlMapping::where('shortened_url', 'sho.rt/' . $shortened)->first();
 
         if ($url) {
             return redirect($url->original_url);

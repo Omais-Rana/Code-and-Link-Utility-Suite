@@ -134,7 +134,7 @@
                     <tbody>
                         <tr>
                             <td colspan="3">
-                                <div id="form-container"></div>
+                                <div id="form-container"> Select an option</div>
                                 <div id="qrcode-container"></div>
                             </td>
                         </tr>

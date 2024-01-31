@@ -19,7 +19,7 @@ Route::get('/check-auth', 'YourController@checkAuth')->middleware('auth');
 
 // Link Shortener Routes
 Route::post('/shorten-url', [URLShortenerController::class, 'shorten'])->name('url.shorten');
-Route::get('/sori.ic/{shortenedURL}', [URLShortenerController::class, 'redirect']);
+Route::get('/sho.rt/{shortenedURL}', [URLShortenerController::class, 'redirect']);
 
 
 //Homepage options
