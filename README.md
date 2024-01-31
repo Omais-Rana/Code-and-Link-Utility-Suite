@@ -19,6 +19,7 @@ Pass: secret
 - Provides the option of downloading codes as PNG files in the user's default Download directory.<br>
 - In storage/app/qrcodes or /barcodes the codes are automatically stored (as PNG) after being generated.<br>
 - Original URLs and their shortened versions are stored in the database with the table named as "url_mappings".
+- The prefix "sho.rt/" is used in shortened links which can be changed from URL controller and the web route files.
 
 # Installation
 
