@@ -23,7 +23,7 @@ Pass: secret
 
 # Installation
 
-Follow the steps mentioned below to install and run the project. You may find more details about the installation in [Installation Wiki](https://github.com/nasirkhan/laravel-starter/wiki/Installation).
+Follow the steps mentioned below to install and run the project. You may find more details about the template and packages used in the Links portion below.
 
 1. Clone or download the repository
 2. Go to the project directory and run `composer install`
