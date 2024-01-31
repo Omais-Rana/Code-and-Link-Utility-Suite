@@ -36,7 +36,7 @@ Follow the steps mentioned below to install and run the project. You may find mo
 9. Run this command to create a table `php artisan make:migration create_url_mappings_table` and migrate using `php artisan migrate`
 10. You may create a virtualhost entry to access the application or run `php artisan serve` from the project root and visit `http://127.0.0.1:8000`
 
-<h3>Imagick extension for PHP is must for PNG format. You can change the change for SVG and it doesn't require any extensions</h3>
+<h3>Imagick extension for PHP is must for PNG format. You can change the format for SVG in the code and it wouldn't require any extensions</h3>
     
 # Links:
 [QR Code Package.](http://www.simplesoftware.io/#/docs/simple-qrcode) <br>
