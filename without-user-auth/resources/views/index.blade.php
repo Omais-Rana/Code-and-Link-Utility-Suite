@@ -11,11 +11,21 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Catamaran">
+
 
     <!-- Styles -->
     <style>
+        * {
+            font-family: Catamaran;
+        }
+
+        body {
+            background-color: #F4F2FA;
+        }
+
         .bg-gray-100 {
-            background-color: #f8f9fa;
+            background-color: #F4F2FA;
         }
 
         .table-bordered th,
@@ -45,9 +55,20 @@
             transition: color 0.3s ease;
         }
 
+        .clickable-th:hover {
+            transition: background-color 0.2s ease;
+        }
+
+        .clickable-th:hover .form-link span {
+            color: whitesmoke;
+        }
+
+        .clickable-th:hover .icons path {
+            fill: whitesmoke;
+        }
+
         h1 {
             color: #252628;
-            font-family: "ProximaNova ExtraBold", "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 62px;
             font-weight: 800;
             line-height: 56px;
@@ -55,9 +76,9 @@
 
         h2 {
             color: #56575b;
-            font-family: "ProximaNova Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 24px;
             font-weight: 400;
+            margin-top: 30px;
         }
 
         .icons {
@@ -65,10 +86,41 @@
             margin-right: 5px;
         }
 
-        .form-link:hover .icons path {
-            fill: #5f2dee;
+        .container {
+            margin-top: 50px;
+        }
+
+        .url-form {
+            background-color: whitesmoke;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .generate-button {
+            background-color: #5f2dee;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            padding: 10px 80px;
             cursor: pointer;
-            transition: color 0.3s ease;
+            transition: background-color 0.3s ease;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .generate-button:hover {
+            background-color: #2e1378;
+        }
+
+        #shortened-url-container {
+            margin-top: 20px;
+        }
+
+        #shortened-url-container p {
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -88,7 +140,7 @@
                 <table class="table table-bordered mx-auto" style="width: 50%;">
                     <thead>
                         <tr class="text-center">
-                            <th class="align-middle">
+                            <th class="clickable-th" data-form-url="{{ route('showForm', ['form' => 'QRcode']) }}">
                                 <a href="#" class="form-link"
                                     data-form-url="{{ route('showForm', ['form' => 'QRcode']) }}"><svg class="icons"
                                         xmlns="http://www.w3.org/2000/svg" width="25" height="24"
@@ -98,7 +150,7 @@
                                             fill="#36383B"></path>
                                     </svg><span>QR Code</span></a>
                             </th>
-                            <th class="align-middle">
+                            <th class="clickable-th" data-form-url="{{ route('showForm', ['form' => 'barcode']) }}">
                                 <a href="#" class="form-link"
                                     data-form-url="{{ route('showForm', ['form' => 'barcode']) }}"><svg class="icons"
                                         width="25" height="26" xmlns="http://www.w3.org/2000/svg" version="1.1"
@@ -113,7 +165,8 @@
                                     </svg>
                                     <span>Barcode</span></a>
                             </th>
-                            <th class="align-middle">
+                            <th class="clickable-th"
+                                data-form-url="{{ route('showForm', ['form' => 'shortened_url']) }}">
                                 <a href="#" class="form-link"
                                     data-form-url="{{ route('showForm', ['form' => 'shortened_url']) }}"><svg
                                         class="icons" xmlns="http://www.w3.org/2000/svg" width="25" height="24"
@@ -134,8 +187,9 @@
                     <tbody>
                         <tr>
                             <td colspan="3">
-                                <div id="form-container"> Select an option</div>
-                                <div id="qrcode-container"></div>
+                                <div id="form-container" style="padding-top: 15px"><strong>No credit card required. Free
+                                        to use</strong></div>
+                                <div id="qrcode-container" style="margin-top: 20px"></div>
                             </td>
                         </tr>
                     </tbody>
@@ -146,6 +200,35 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/js/bootstrap.bundle.min.js"></script>
         <script>
             $(document).ready(function() {
+                $('.clickable-th').hover(
+                    function() {
+                        $(this).css({
+                            'background-color': '#5f2dee',
+                            'cursor': 'pointer'
+                        });
+                    },
+                    function() {
+                        $(this).css({
+                            'background-color': '',
+                            'cursor': ''
+                        });
+                    }
+                );
+
+                $('.clickable-th').click(function() {
+                    var formUrl = $(this).data('form-url');
+                    $.get(formUrl, function(data) {
+                        $('#form-container').html(data);
+                        $('#qrcode-container, #barcode-container, #shortened-url-container').empty();
+                    });
+                });
+
+
+                $('.clickable-th').click(function() {
+                    var formTitle = $(this).find('.form-link span').text().trim();
+                    document.title = formTitle;
+                });
+
                 $('.form-link').on('click', function(e) {
                     e.preventDefault();
 
